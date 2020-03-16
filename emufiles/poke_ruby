@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<span style="cursor:wait">
+<div style="background-color: #000000">
+<br>
+<a href="../index.html" style="cursor:progress" style="color: black">Main Page</a>
+<a href="../nes.html" style="cursor:progress">NES</a>
+<a href="../snes.html" style="cursor:progress">SNES</a>
+  <a href="../gb.html" style="cursor:progress">Gameboy</a>
+  <a href="../gbc.html" style="cursor:progress">Gameboy Color</a>
+  <a href="../gba.html" style="cursor:progress">Gameboy Advance</a>
+  <a href="../genesis.html" style="cursor:progress">Sega Genesis</a>
+	<a href="../32x.html" style="cursor:progress">Sega 32x</a>
+    <a href="../recommendations.html" style="cursor:progress">Recommendations</a>
+
+<br><br>
+</div>
+<body>
+
+
+<style>
+body {
+  background-color: #BDBDBD;
+}
+p {
+  color: black;
+}
+
+p, h1, div, th, table, ul, li {
+  text-align: center;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+ Table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #848484;
+  color: white;
+  font-size: 30px;
+}
+body {
+  font-family: Arial;
+  margin: 0;
+}
+.content {padding:20px;}
+.left {
+  position: absolute;
+  left: 0px;
+  width: 300px;
+}
+.right {
+  position: absolute;
+  right: 0px;
+  width: 300px;
+}
+.lefta {
+  position: absolute;
+  left: 355px;
+  width: 350px;
+}
+.righta {
+  position: absolute;
+  right: 355px;
+  width: 350px;
+}
+a:link, a:visited {
+  background-color: #585858;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: #BDBDBD;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+h4 {
+}
+</style>
+
+<title>Game</title>
+	<br><br><br><br><br><br><br><br>
+<!--this will load super mario from this diretory -->
+<!--start-->
+<div>
+	<div id="emulator">
+		<p>To play this game, please, download the latest Flash player!</p>
+		<br>
+		<a href="http://www.adobe.com/go/getflashplayer">
+			<img src="//www.adobe.com/images/shared/download_buttons/get_adobe_flash_player.png" alt="Get Adobe Flash player"/>
+		</a>
+	</div>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+
+<script type="text/javascript">
+
+	var resizeOwnEmulator = function(width, height)
+	{
+		var emulator = $('#emulator');
+		emulator.css('width', width);
+		emulator.css('height', height);
+	}
+
+	$(function()
+	{
+		function embed()
+		{
+			var emulator = $('#emulator');
+			if(emulator)
+			{
+				var flashvars = 
+				{
+					system : 'gba',
+					url : 'roms/gba/poke_ruby.gba'
+				};
+				var params = {};
+				var attributes = {};
+				
+				params.allowscriptaccess = 'sameDomain';
+				params.allowFullScreen = 'true';
+				params.allowFullScreenInteractive = 'true';
+				
+				swfobject.embedSWF('bin/Nesbox.swf', 'emulator', '640', '480', '11.2.0', 'flash/expressInstall.swf', flashvars, params, attributes);
+			}
+		}
+		
+		embed();
+	});
+	
+</script>
+<!--end-->
+
+
+<br><br><br><br><br>
+<div>	<button style="cursor:progress" onclick="window.location.href = '../nes.html';">Back</button> </div>
+<br><br><br><br>
+</body>
+</html>
